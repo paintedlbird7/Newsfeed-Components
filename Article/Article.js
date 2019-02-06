@@ -1,9 +1,20 @@
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
+// class Panel {
+//   constructor(panel) {
+//     this.panelButtons = panel.querySelector(".panel-buttons");
+//     this.panelBtnOpen = panel.querySelector(".panel-btn-open");
+//     this.panelBtnClose = panel.querySelector(".panel-btn-close");
+//     this.panelContent = panel.querySelector(".panel-content");
+
+//     this.panelButtons.addEventListener("click", () => this.togglePanel());
+//   }
+
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    this.domElement;
+    this.domButtons = domElement.querySelector(".domElement-buttons");
+    
     // create a reference to the ".expandButton" class. 
     this.expandButton;
     // Using your expandButton reference, update the text on your expandButton to say "expand"
