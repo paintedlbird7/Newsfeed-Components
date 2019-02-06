@@ -1,78 +1,35 @@
-
-
+// - Select all classes named ".article" and assign that value to the articles variable.  
 // Because classes are not hoised you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
-// class Panel {
-//   constructor(panel) {
-//     this.panelButtons = panel.querySelector(".panel-buttons");
-//     this.panelBtnOpen = panel.querySelector(".panel-btn-open");
-//     this.panelBtnClose = panel.querySelector(".panel-btn-close");
-//     this.panelContent = panel.querySelector(".panel-content");
-
-//     this.panelButtons.addEventListener("click", () => this.togglePanel());
-//   }
 class Article {
-  constructor(article) {
+  constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    this.articleButtons = article.querySelector(".article-buttons");
-    this.articleBtnOpen = article.querySelector(".article-btn-open");
-    this.articleBtnClose = article.querySelector(".article-btn-close");
-    this.articleContent = article.querySelector(".article-content");
+    this.domElement = domElement
+    this.expandButton = this.domElement.querySelector(".expandButton");
+    this.expandButton.innerText = "expand";
 
-    this.articleButtons.addEventListener("click", () => this.toggleArticle());
+
+    this.expandButton.addEventListener("click", () => {this.expandArticle()});
+  }
+ 
+    // create a reference to the ".expandButton" class. 
+    expandArticle() {
+      this.domElement.classList.toggle("article-open");
+       
+    }
   }
 
 
 
-
-    
-//   // Methods
-//   togglePanel = () => {
-//     this.panelBtnOpen.classList.toggle("hide-btn");
-//     this.panelBtnClose.classList.toggle("hide-btn");
-//     this.panelContent.classList.toggle("toggle-on");
-//   };
-// }
-    // create a reference to the ".expandButton" class. 
-    toggleButton = () => {
-    this.articleBtnOpen.classList.toggle("hide-btn");
-    this.articleBtnClose.classList.toggle("hide-btn");
-    this.articleContent.classList.toggle("toggle-on");
-  };
-}
-
-
-
 // // Step 3: use .querySelectorAll() on the .panel class to iterate over the DOM
-// const panels = document.querySelectorAll(".panel");
-// // Arrow function approach
-// panels.forEach(panel => new Panel(panel));
-
-
-// Step 3: use .querySelectorAll() on the .panel class to iterate over the DOM
-const articles = document.querySelectorAll(".article");
-
-// Arrow function approach
-articles.forEach(article => new Article(article));
-
-
-// articles.forEach(article => {
-//   return new Article(article)
-// })
-
-
-   
-
-
-
-/* START HERE: 
-
-- Select all classes named ".article" and assign that value to the articles variable.  
-
-- With your selection in place, now chain .forEach() on to the articles variable to 
+// - With your selection in place, now chain .forEach() on to the articles variable to 
 //iterate over the articles NodeList and create a new instance of Article by passing in 
 //each article as a parameter to the constructor.
 
-*/
+// Step 3: use .querySelectorAll() on the .panel class to iterate over the DOM
+let articles = document.querySelectorAll(".article");
 
-// let articles;
+// Arrow function approach
+articles.forEach(article => {new Article(article)});
+
+
