@@ -11,8 +11,7 @@
 
 //     this.panelButtons.addEventListener("click", () => this.togglePanel());
 //   }
-
-class Articles {
+class Article {
   constructor(article) {
     // assign this.domElement to the passed in domElement
     this.articleButtons = article.querySelector(".article-buttons");
@@ -20,8 +19,8 @@ class Articles {
     this.articleBtnClose = article.querySelector(".article-btn-close");
     this.articleContent = article.querySelector(".article-content");
 
-    this.articleButtons.addEventListener("click", () => this.expandArticle());
-
+    this.articleButtons.addEventListener("click", () => this.toggleArticle());
+  }
 
 
 
@@ -35,19 +34,17 @@ class Articles {
 //   };
 // }
     // create a reference to the ".expandButton" class. 
-    this.expandButton = () => {
-    this.articleBtnOpen.classList.expand("hide-btn");
-    this.articleBtnClose.classList.expand("hide-btn");
-    this.articleContent.classList.expand("expand-on");
+    toggleButton = () => {
+    this.articleBtnOpen.classList.toggle("hide-btn");
+    this.articleBtnClose.classList.toggle("hide-btn");
+    this.articleContent.classList.toggle("toggle-on");
   };
 }
 
 
 
 // // Step 3: use .querySelectorAll() on the .panel class to iterate over the DOM
-
 // const panels = document.querySelectorAll(".panel");
-
 // // Arrow function approach
 // panels.forEach(panel => new Panel(panel));
 
